@@ -3,22 +3,22 @@
     "path": "~/brownlow_medal_2021/01 Scripts/02_main.R",
     "project_path": "01 Scripts/02_main.R",
     "type": "r_source",
-    "hash": "1933530989",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1631510420655.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
-        "cursorPosition": "75,0",
-        "scrollLine": "20"
+        "cursorPosition": "65,35",
+        "scrollLine": "37"
     },
     "folds": "",
-    "lastKnownWriteTime": 1631528932,
+    "lastKnownWriteTime": 1631532561,
     "encoding": "ISO8859-1",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1631528932500,
+    "last_content_update": 1631532561518,
     "read_only": false,
     "read_only_alternatives": []
 }

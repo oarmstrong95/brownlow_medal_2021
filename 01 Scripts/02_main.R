@@ -3,7 +3,7 @@
 
 # Load and install packages locally
 pacman::p_load(tidyverse, here, fitzRoy, janitor, lubridate, naniar, tidymodels, 
-               readr, themis, ranger, parallel, doParallel, tictoc, rvest, vip)
+               readr, themis, ranger, parallel, doParallel, tictoc, rvest, vip, gt)
 
 setwd(paste0(here::here(), "/01 Scripts"))
 source('00_functions.R', echo=FALSE)
@@ -69,6 +69,20 @@ metrics <- out_of_sample_accuracy()
 
 # Fit the final model to all historic data and predict on the new data
 predicted_votes <- predict_function()
+
+# setwd(paste0(here::here(), "/02 Outputs"))
+# predicted_votes %>%
+#   inner_join(clean_all_data) %>%
+#   select(match_round, player_team, player_name, .pred_0:.pred_3, expected_votes, predicted_votes) %>%
+#   write_csv('2021_predicted_votes.csv')
+
+
+
+
+
+
+
+
 
 
 
