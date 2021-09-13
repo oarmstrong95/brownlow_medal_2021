@@ -141,3 +141,71 @@ clean_data <- function(data, afl_com_au_votes, coaches_votes, fantasy_scores,
   
 }
 
+### Other functions ------------------------------------------------------------------------------------------
+
+var_importance <- function() {
+  
+  best <- ranger_tune %>%
+    select_best("roc_auc")
+  
+  data_vip <- ranger_recipe %>% prep() %>% juice()
+  
+  graph <- finalize_model(ranger_spec, best) %>%
+    set_engine("ranger", importance = "permutation") %>%
+    fit(brownlow_votes ~ .,
+        data = data_vip) %>%
+    vip(geom = "point")
+  
+  return(graph)
+  
+}
+
+# Get accuracy on test set
+out_of_sample_accuracy <- function() {
+  
+  best <- ranger_tune %>%
+    select_best("roc_auc")
+  
+  # Fit on entire training data
+  ranger_test_check <- 
+    workflow() %>% 
+    add_recipe(ranger_recipe) %>% 
+    add_model(finalize_model(ranger_spec, best)) %>%
+    last_fit(split, metrics = metric_set(roc_auc, accuracy, sensitivity, specificity))
+  
+  # Check out of sample accuracy
+  metrics <- ranger_test_check %>%
+    collect_metrics()
+  
+  # Check roc graphs
+  roc_curve <- ranger_test_check %>%
+    roc_curve_fun()
+  
+  metrics <- list(metrics, roc_curve)
+  
+  return(metrics)
+  
+}
+
+# Define function to check tuning parameters to optimize the grid search
+# on the second tuning iteration
+tuning_parameters_fun <- function(){
+  
+  graph <- ranger_tune %>%
+    collect_metrics() %>%
+    filter(.metric == "roc_auc") %>%
+    select(mean, min_n, mtry) %>%
+    pivot_longer(min_n:mtry,
+                 values_to = "value",
+                 names_to = "parameter"
+    ) %>%
+    ggplot(aes(value, mean, color = parameter)) +
+    geom_point(show.legend = FALSE) +
+    facet_wrap(~parameter, scales = "free_x") +
+    labs(x = NULL, y = "AUC")
+  
+  return(graph)
+  
+}
+
+

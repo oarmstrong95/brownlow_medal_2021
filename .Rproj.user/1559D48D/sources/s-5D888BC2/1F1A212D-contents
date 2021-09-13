@@ -2,11 +2,11 @@
 ### Load packages and functions -------------------------------------------------------------------------
 
 # Load and install packages locally
-pacman::p_load(tidyverse, here, fitzRoy, janitor, lubridate, naniar, tidymodels, readr, themis, ranger, parallel,
-               doParallel, tictoc, rvest)
+pacman::p_load(tidyverse, here, fitzRoy, janitor, lubridate, naniar, tidymodels, 
+               readr, themis, ranger, parallel, doParallel, tictoc, rvest, vip)
 
-setwd("~/brownlow_2021/01 Scripts/")
-source('00_clean_import.R', echo=FALSE)
+setwd(paste0(here::here(), "/01 Scripts"))
+source('00_functions.R', echo=FALSE)
 
 ### Global variables ------------------------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ YEARS <- 2016:2021
 ### Import and clean data -------------------------------------------------------------------------------
 
 # Import data
-setwd("~/brownlow_2021/00 Data Assets")
+setwd(paste0(here::here(), "/00 Data Assets"))
 match_data <- import_data(YEARS)
 afl_com_au_votes <- read_csv("afl_com_au_votes.csv")
 coaches_votes <- read_csv("coaches_votes.csv")
@@ -51,9 +51,29 @@ set.seed(234)
 bootstrap_folds <- 
   bootstraps(train, strata = brownlow_votes)
 
-### Run model --------------------------------------------------------------------------------------------
+### Train and fit model ---------------------------------------------------------------------------------
 
-setwd("~/brownlow_2021/01 Scripts/")
+setwd(paste0(here::here(), "/01 Scripts"))
 source('01_models.R', echo=TRUE)
+
+# See which hyper parameters performed the best
+hyper_parameter_grid <- tuning_parameters_fun()
+
+# See which variables are of most importance
+var_salience <- var_importance()
+
+# See how the model performs on the test set using optimal hyper parameters
+metrics <- out_of_sample_accuracy()
+
+### Get predictions for 2021 ----------------------------------------------------------------------------
+
+# Fit the final model to all historic data and predict on the new data
+predicted_votes <- predict_function()
+
+
+
+
+
+
 
 
