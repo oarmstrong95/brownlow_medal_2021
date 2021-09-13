@@ -1,0 +1,456 @@
+votes,match_home_team,match_away_team,match_round,season,player_id
+3,Richmond,Carlton,1,2020,11921
+2,Richmond,Carlton,1,2020,11801
+1,Richmond,Carlton,1,2020,12243
+3,Western Bulldogs,Collingwood,1,2020,12223
+2,Western Bulldogs,Collingwood,1,2020,12648
+1,Western Bulldogs,Collingwood,1,2020,11759
+3,Essendon,Fremantle,1,2020,12032
+2,Essendon,Fremantle,1,2020,12330
+1,Essendon,Fremantle,1,2020,12289
+3,Gold Coast,Port Adelaide,1,2020,11591
+2,Gold Coast,Port Adelaide,1,2020,12429
+1,Gold Coast,Port Adelaide,1,2020,11792
+3,North Melbourne,St Kilda,1,2020,11843
+2,North Melbourne,St Kilda,1,2020,12511
+3,Hawthorn,Brisbane Lions,1,2020,12053
+2,Hawthorn,Brisbane Lions,1,2020,11192
+1,Hawthorn,Brisbane Lions,1,2020,11766
+3,West Coast,Melbourne,1,2020,12260
+2,West Coast,Melbourne,1,2020,11909
+1,West Coast,Melbourne,1,2020,12152
+3,Collingwood,Richmond,2,2020,11506
+2,Collingwood,Richmond,2,2020,12460
+1,Collingwood,Richmond,2,2020,11759
+3,Geelong,Hawthorn,2,2020,11552
+2,Geelong,Hawthorn,2,2020,12513
+1,Geelong,Hawthorn,2,2020,12690
+3,Brisbane Lions,Fremantle,2,2020,12061
+2,Brisbane Lions,Fremantle,2,2020,11844
+1,Brisbane Lions,Fremantle,2,2020,11770
+3,Carlton,Melbourne,2,2020,12437
+2,Carlton,Melbourne,2,2020,11972
+1,Carlton,Melbourne,2,2020,12175
+3,Port Adelaide,Adelaide,2,2020,11825
+2,Port Adelaide,Adelaide,2,2020,11591
+1,Port Adelaide,Adelaide,2,2020,11792
+3,Gold Coast,West Coast,2,2020,12769
+2,Gold Coast,West Coast,2,2020,11952
+1,Gold Coast,West Coast,2,2020,11813
+3,Greater Western Sydney,North Melbourne,2,2020,11692
+2,Greater Western Sydney,North Melbourne,2,2020,11502
+1,Greater Western Sydney,North Melbourne,2,2020,12023
+3,Sydney,Essendon,2,2020,12249
+2,Sydney,Essendon,2,2020,11958
+1,Sydney,Essendon,2,2020,12419
+3,St Kilda,Western Bulldogs,2,2020,12294
+2,St Kilda,Western Bulldogs,2,2020,12255
+1,St Kilda,Western Bulldogs,2,2020,12421
+3,Richmond,Hawthorn,3,2020,11948
+2,Richmond,Hawthorn,3,2020,12216
+1,Richmond,Hawthorn,3,2020,12149
+3,Western Bulldogs,Greater Western Sydney,3,2020,12172
+2,Western Bulldogs,Greater Western Sydney,3,2020,12541
+1,Western Bulldogs,Greater Western Sydney,3,2020,12382
+3,North Melbourne,Sydney,3,2020,12511
+2,North Melbourne,Sydney,3,2020,12331
+1,North Melbourne,Sydney,3,2020,12501
+3,Collingwood,St Kilda,3,2020,11759
+2,Collingwood,St Kilda,3,2020,11506
+1,Collingwood,St Kilda,3,2020,12223
+3,Geelong,Carlton,3,2020,12269
+2,Geelong,Carlton,3,2020,11804
+1,Geelong,Carlton,3,2020,11383
+3,Brisbane Lions,West Coast,3,2020,12061
+2,Brisbane Lions,West Coast,3,2020,12526
+1,Brisbane Lions,West Coast,3,2020,11909
+3,Gold Coast,Adelaide,3,2020,12769
+2,Gold Coast,Adelaide,3,2020,12329
+1,Gold Coast,Adelaide,3,2020,12728
+3,Fremantle,Port Adelaide,3,2020,11591
+2,Fremantle,Port Adelaide,3,2020,12155
+1,Fremantle,Port Adelaide,3,2020,11844
+3,Sydney,Western Bulldogs,4,2020,12277
+2,Sydney,Western Bulldogs,4,2020,12419
+1,Sydney,Western Bulldogs,4,2020,12548
+3,Greater Western Sydney,Collingwood,4,2020,12026
+2,Greater Western Sydney,Collingwood,4,2020,11506
+1,Greater Western Sydney,Collingwood,4,2020,12096
+3,Port Adelaide,West Coast,4,2020,11915
+2,Port Adelaide,West Coast,4,2020,11586
+1,Port Adelaide,West Coast,4,2020,11746
+3,St Kilda,Richmond,4,2020,12498
+2,St Kilda,Richmond,4,2020,12529
+1,St Kilda,Richmond,4,2020,11878
+3,Essendon,Carlton,4,2020,12484
+2,Essendon,Carlton,4,2020,12121
+1,Essendon,Carlton,4,2020,12684
+3,Gold Coast,Fremantle,4,2020,12769
+2,Gold Coast,Fremantle,4,2020,12184
+1,Gold Coast,Fremantle,4,2020,12434
+3,Brisbane Lions,Adelaide,4,2020,12061
+2,Brisbane Lions,Adelaide,4,2020,12525
+1,Brisbane Lions,Adelaide,4,2020,12526
+3,Melbourne,Geelong,4,2020,11894
+2,Melbourne,Geelong,4,2020,11972
+1,Melbourne,Geelong,4,2020,12474
+3,Hawthorn,North Melbourne,4,2020,12053
+2,Hawthorn,North Melbourne,4,2020,12511
+1,Hawthorn,North Melbourne,4,2020,11692
+2,Carlton,St Kilda,5,2020,12572
+1,Carlton,St Kilda,5,2020,12498
+3,Collingwood,Essendon,5,2020,12032
+2,Collingwood,Essendon,5,2020,12173
+1,Collingwood,Essendon,5,2020,12058
+3,West Coast,Sydney,5,2020,12093
+2,West Coast,Sydney,5,2020,12662
+1,West Coast,Sydney,5,2020,11773
+3,Geelong,Gold Coast,5,2020,11554
+2,Geelong,Gold Coast,5,2020,12544
+1,Geelong,Gold Coast,5,2020,11706
+3,Western Bulldogs,North Melbourne,5,2020,12071
+2,Western Bulldogs,North Melbourne,5,2020,11904
+1,Western Bulldogs,North Melbourne,5,2020,11794
+3,Brisbane Lions,Port Adelaide,5,2020,12061
+2,Brisbane Lions,Port Adelaide,5,2020,12073
+1,Brisbane Lions,Port Adelaide,5,2020,12347
+2,Adelaide,Fremantle,5,2020,12596
+1,Adelaide,Fremantle,5,2020,12434
+3,Melbourne,Richmond,5,2020,12341
+2,Melbourne,Richmond,5,2020,11972
+1,Melbourne,Richmond,5,2020,12411
+3,Greater Western Sydney,Hawthorn,5,2020,12096
+2,Greater Western Sydney,Hawthorn,5,2020,12262
+1,Greater Western Sydney,Hawthorn,5,2020,12470
+3,Geelong,Brisbane Lions,6,2020,11706
+2,Geelong,Brisbane Lions,6,2020,11554
+1,Geelong,Brisbane Lions,6,2020,11170
+3,Collingwood,Hawthorn,6,2020,12648
+2,Collingwood,Hawthorn,6,2020,12058
+1,Collingwood,Hawthorn,6,2020,12381
+3,West Coast,Adelaide,6,2020,12605
+2,West Coast,Adelaide,6,2020,12260
+1,West Coast,Adelaide,6,2020,12441
+3,Melbourne,Gold Coast,6,2020,12437
+2,Melbourne,Gold Coast,6,2020,11972
+1,Melbourne,Gold Coast,6,2020,12797
+3,Essendon,North Melbourne,6,2020,12505
+2,Essendon,North Melbourne,6,2020,11740
+1,Essendon,North Melbourne,6,2020,11692
+3,Port Adelaide,Greater Western Sydney,6,2020,12504
+2,Port Adelaide,Greater Western Sydney,6,2020,12147
+1,Port Adelaide,Greater Western Sydney,6,2020,12671
+3,Richmond,Sydney,6,2020,12341
+2,Richmond,Sydney,6,2020,12418
+1,Richmond,Sydney,6,2020,12668
+3,Carlton,Western Bulldogs,6,2020,11889
+2,Carlton,Western Bulldogs,6,2020,11383
+1,Carlton,Western Bulldogs,6,2020,12698
+3,Essendon,Western Bulldogs,7,2020,12548
+2,Essendon,Western Bulldogs,7,2020,12172
+1,Essendon,Western Bulldogs,7,2020,12210
+3,Greater Western Sydney,Brisbane Lions,7,2020,12347
+2,Greater Western Sydney,Brisbane Lions,7,2020,12023
+1,Greater Western Sydney,Brisbane Lions,7,2020,12617
+3,Sydney,Gold Coast,7,2020,12544
+2,Sydney,Gold Coast,7,2020,11958
+1,Sydney,Gold Coast,7,2020,11923
+3,Richmond,North Melbourne,7,2020,12542
+2,Richmond,North Melbourne,7,2020,12741
+1,Richmond,North Melbourne,7,2020,12425
+3,Carlton,Port Adelaide,7,2020,11915
+2,Carlton,Port Adelaide,7,2020,12685
+1,Carlton,Port Adelaide,7,2020,12729
+3,Hawthorn,Melbourne,7,2020,11972
+2,Hawthorn,Melbourne,7,2020,12437
+1,Hawthorn,Melbourne,7,2020,12411
+3,Adelaide,St Kilda,7,2020,12377
+2,Adelaide,St Kilda,7,2020,12498
+1,Adelaide,St Kilda,7,2020,12422
+3,Gold Coast,Western Bulldogs,8,2020,12172
+2,Gold Coast,Western Bulldogs,8,2020,12698
+1,Gold Coast,Western Bulldogs,8,2020,11923
+3,Greater Western Sydney,Richmond,8,2020,12026
+2,Greater Western Sydney,Richmond,8,2020,11801
+1,Greater Western Sydney,Richmond,8,2020,12262
+3,North Melbourne,Carlton,8,2020,12788
+2,North Melbourne,Carlton,8,2020,11889
+1,North Melbourne,Carlton,8,2020,11933
+3,Sydney,Hawthorn,8,2020,12419
+2,Sydney,Hawthorn,8,2020,12149
+1,Sydney,Hawthorn,8,2020,12275
+3,Port Adelaide,St Kilda,8,2020,12377
+2,Port Adelaide,St Kilda,8,2020,12294
+1,Port Adelaide,St Kilda,8,2020,11468
+3,Adelaide,Essendon,8,2020,12249
+2,Adelaide,Essendon,8,2020,12796
+1,Adelaide,Essendon,8,2020,11898
+3,Melbourne,Brisbane Lions,8,2020,12061
+2,Melbourne,Brisbane Lions,8,2020,12411
+1,Melbourne,Brisbane Lions,8,2020,12073
+3,Fremantle,Geelong,8,2020,11894
+2,Fremantle,Geelong,8,2020,12596
+1,Fremantle,Geelong,8,2020,11804
+3,Western Bulldogs,Richmond,9,2020,11801
+2,Western Bulldogs,Richmond,9,2020,12172
+1,Western Bulldogs,Richmond,9,2020,12686
+3,Carlton,Hawthorn,9,2020,11854
+2,Carlton,Hawthorn,9,2020,12269
+1,Carlton,Hawthorn,9,2020,12201
+3,Melbourne,Port Adelaide,9,2020,11591
+2,Melbourne,Port Adelaide,9,2020,11792
+1,Melbourne,Port Adelaide,9,2020,12770
+3,Essendon,Brisbane Lions,9,2020,12061
+2,Essendon,Brisbane Lions,9,2020,12554
+1,Essendon,Brisbane Lions,9,2020,12284
+3,North Melbourne,Adelaide,9,2020,12159
+2,North Melbourne,Adelaide,9,2020,12246
+1,North Melbourne,Adelaide,9,2020,12047
+3,St Kilda,Sydney,9,2020,12422
+2,St Kilda,Sydney,9,2020,12734
+1,St Kilda,Sydney,9,2020,12377
+3,West Coast,Geelong,9,2020,12260
+2,West Coast,Geelong,9,2020,11773
+1,West Coast,Geelong,9,2020,12514
+2,Gold Coast,Greater Western Sydney,9,2020,12262
+1,Gold Coast,Greater Western Sydney,9,2020,12181
+3,Fremantle,Collingwood,9,2020,12550
+2,Fremantle,Collingwood,9,2020,12211
+1,Fremantle,Collingwood,9,2020,12786
+3,Port Adelaide,Western Bulldogs,10,2020,11792
+2,Port Adelaide,Western Bulldogs,10,2020,12693
+1,Port Adelaide,Western Bulldogs,10,2020,12729
+3,Richmond,Brisbane Lions,10,2020,11801
+2,Richmond,Brisbane Lions,10,2020,12668
+1,Richmond,Brisbane Lions,10,2020,12061
+3,Geelong,North Melbourne,10,2020,11894
+2,Geelong,North Melbourne,10,2020,12690
+1,Geelong,North Melbourne,10,2020,12511
+3,Adelaide,Melbourne,10,2020,12411
+2,Adelaide,Melbourne,10,2020,12152
+1,Adelaide,Melbourne,10,2020,11945
+3,Collingwood,Sydney,10,2020,12070
+2,Collingwood,Sydney,10,2020,12582
+1,Collingwood,Sydney,10,2020,12067
+3,Gold Coast,St Kilda,10,2020,12377
+2,Gold Coast,St Kilda,10,2020,12498
+1,Gold Coast,St Kilda,10,2020,12329
+3,Essendon,Greater Western Sydney,10,2020,12512
+2,Essendon,Greater Western Sydney,10,2020,12249
+1,Essendon,Greater Western Sydney,10,2020,12023
+3,Port Adelaide,Richmond,11,2020,12155
+2,Port Adelaide,Richmond,11,2020,11591
+1,Port Adelaide,Richmond,11,2020,11585
+3,Brisbane Lions,Western Bulldogs,11,2020,12061
+2,Brisbane Lions,Western Bulldogs,11,2020,12172
+1,Brisbane Lions,Western Bulldogs,11,2020,12462
+3,West Coast,Carlton,11,2020,12093
+2,West Coast,Carlton,11,2020,12605
+1,West Coast,Carlton,11,2020,11874
+3,Melbourne,North Melbourne,11,2020,12437
+2,Melbourne,North Melbourne,11,2020,12411
+1,Melbourne,North Melbourne,11,2020,12325
+3,St Kilda,Geelong,11,2020,11849
+2,St Kilda,Geelong,11,2020,11706
+1,St Kilda,Geelong,11,2020,11554
+3,Fremantle,Hawthorn,11,2020,12596
+2,Fremantle,Hawthorn,11,2020,11844
+1,Fremantle,Hawthorn,11,2020,12201
+3,Adelaide,Collingwood,11,2020,12070
+2,Adelaide,Collingwood,11,2020,12067
+1,Adelaide,Collingwood,11,2020,11759
+3,Gold Coast,Essendon,11,2020,12544
+2,Gold Coast,Essendon,11,2020,11740
+1,Gold Coast,Essendon,11,2020,12393
+3,Sydney,Greater Western Sydney,12,2020,11958
+2,Sydney,Greater Western Sydney,12,2020,12275
+1,Sydney,Greater Western Sydney,12,2020,12148
+3,Geelong,Port Adelaide,12,2020,11554
+2,Geelong,Port Adelaide,12,2020,11706
+1,Geelong,Port Adelaide,12,2020,12286
+3,North Melbourne,Brisbane Lions,12,2020,12061
+2,North Melbourne,Brisbane Lions,12,2020,12073
+1,North Melbourne,Brisbane Lions,12,2020,12599
+3,Melbourne,Collingwood,12,2020,12437
+2,Melbourne,Collingwood,12,2020,12411
+1,Melbourne,Collingwood,12,2020,12603
+3,Fremantle,Carlton,12,2020,12269
+2,Fremantle,Carlton,12,2020,11844
+1,Fremantle,Carlton,12,2020,12056
+3,Western Bulldogs,Adelaide,12,2020,12602
+2,Western Bulldogs,Adelaide,12,2020,12277
+1,Western Bulldogs,Adelaide,12,2020,12449
+3,St Kilda,Essendon,12,2020,12572
+2,St Kilda,Essendon,12,2020,12294
+1,St Kilda,Essendon,12,2020,12066
+3,West Coast,Hawthorn,12,2020,11813
+2,West Coast,Hawthorn,12,2020,11909
+1,West Coast,Hawthorn,12,2020,12607
+3,Richmond,Gold Coast,12,2020,12703
+2,Richmond,Gold Coast,12,2020,11671
+1,Richmond,Gold Coast,12,2020,12180
+3,Gold Coast,Carlton,13,2020,12684
+2,Gold Coast,Carlton,13,2020,11472
+1,Gold Coast,Carlton,13,2020,12528
+3,Western Bulldogs,Melbourne,13,2020,12698
+2,Western Bulldogs,Melbourne,13,2020,11940
+1,Western Bulldogs,Melbourne,13,2020,12172
+3,Port Adelaide,Hawthorn,13,2020,11591
+2,Port Adelaide,Hawthorn,13,2020,12201
+1,Port Adelaide,Hawthorn,13,2020,12244
+3,Essendon,Richmond,13,2020,12542
+2,Essendon,Richmond,13,2020,12249
+1,Essendon,Richmond,13,2020,11801
+3,Fremantle,Sydney,13,2020,12550
+2,Fremantle,Sydney,13,2020,12289
+1,Fremantle,Sydney,13,2020,12211
+3,Adelaide,Geelong,13,2020,11894
+2,Adelaide,Geelong,13,2020,11804
+1,Adelaide,Geelong,13,2020,11706
+3,Brisbane Lions,St Kilda,13,2020,12525
+2,Brisbane Lions,St Kilda,13,2020,12377
+1,Brisbane Lions,St Kilda,13,2020,12526
+3,West Coast,Greater Western Sydney,13,2020,12262
+2,West Coast,Greater Western Sydney,13,2020,12279
+1,West Coast,Greater Western Sydney,13,2020,11909
+3,Collingwood,North Melbourne,13,2020,12381
+2,Collingwood,North Melbourne,13,2020,11506
+1,Collingwood,North Melbourne,13,2020,12070
+3,Hawthorn,Essendon,14,2020,12249
+2,Hawthorn,Essendon,14,2020,12505
+1,Hawthorn,Essendon,14,2020,12205
+3,Richmond,West Coast,14,2020,11671
+2,Richmond,West Coast,14,2020,11813
+1,Richmond,West Coast,14,2020,11573
+3,Western Bulldogs,Geelong,14,2020,11706
+2,Western Bulldogs,Geelong,14,2020,12210
+1,Western Bulldogs,Geelong,14,2020,11894
+3,Port Adelaide,Sydney,14,2020,11915
+2,Port Adelaide,Sydney,14,2020,11585
+1,Port Adelaide,Sydney,14,2020,11958
+3,Fremantle,Greater Western Sydney,14,2020,12022
+2,Fremantle,Greater Western Sydney,14,2020,12147
+1,Fremantle,Greater Western Sydney,14,2020,12447
+3,Melbourne,St Kilda,14,2020,12437
+2,Melbourne,St Kilda,14,2020,11945
+1,Melbourne,St Kilda,14,2020,12377
+3,Carlton,Collingwood,14,2020,12070
+2,Carlton,Collingwood,14,2020,12381
+1,Carlton,Collingwood,14,2020,11506
+3,Gold Coast,North Melbourne,14,2020,12544
+2,Gold Coast,North Melbourne,14,2020,12506
+1,Gold Coast,North Melbourne,14,2020,12086
+3,Hawthorn,Adelaide,15,2020,11799
+2,Hawthorn,Adelaide,15,2020,12483
+1,Hawthorn,Adelaide,15,2020,12265
+3,West Coast,Essendon,15,2020,12391
+2,West Coast,Essendon,15,2020,12413
+1,West Coast,Essendon,15,2020,12605
+3,Richmond,Fremantle,15,2020,12584
+2,Richmond,Fremantle,15,2020,12425
+1,Richmond,Fremantle,15,2020,12790
+3,Sydney,Melbourne,15,2020,11958
+2,Sydney,Melbourne,15,2020,11972
+1,Sydney,Melbourne,15,2020,12469
+3,Greater Western Sydney,Carlton,15,2020,12026
+2,Greater Western Sydney,Carlton,15,2020,12685
+1,Greater Western Sydney,Carlton,15,2020,12410
+3,Brisbane Lions,Collingwood,15,2020,12525
+2,Brisbane Lions,Collingwood,15,2020,12067
+1,Brisbane Lions,Collingwood,15,2020,12073
+3,North Melbourne,Port Adelaide,16,2020,12155
+2,North Melbourne,Port Adelaide,16,2020,11591
+1,North Melbourne,Port Adelaide,16,2020,12365
+3,St Kilda,Hawthorn,16,2020,12201
+2,St Kilda,Hawthorn,16,2020,12377
+1,St Kilda,Hawthorn,16,2020,12066
+3,Geelong,Essendon,16,2020,12474
+2,Geelong,Essendon,16,2020,11554
+1,Geelong,Essendon,16,2020,11894
+3,Western Bulldogs,West Coast,16,2020,12421
+2,Western Bulldogs,West Coast,16,2020,12172
+1,Western Bulldogs,West Coast,16,2020,12277
+3,Melbourne,Fremantle,16,2020,12610
+2,Melbourne,Fremantle,16,2020,12152
+1,Melbourne,Fremantle,16,2020,11770
+3,Adelaide,Greater Western Sydney,16,2020,12171
+2,Adelaide,Greater Western Sydney,16,2020,12265
+1,Adelaide,Greater Western Sydney,16,2020,12161
+3,Carlton,Sydney,16,2020,12685
+2,Carlton,Sydney,16,2020,12269
+1,Carlton,Sydney,16,2020,12501
+3,Brisbane Lions,Gold Coast,16,2020,12061
+2,Brisbane Lions,Gold Coast,16,2020,12594
+1,Brisbane Lions,Gold Coast,16,2020,11718
+3,St Kilda,West Coast,17,2020,12605
+2,St Kilda,West Coast,17,2020,11773
+1,St Kilda,West Coast,17,2020,11909
+3,Geelong,Richmond,17,2020,12542
+2,Geelong,Richmond,17,2020,11582
+1,Geelong,Richmond,17,2020,11801
+3,North Melbourne,Fremantle,17,2020,11770
+2,North Melbourne,Fremantle,17,2020,12282
+1,North Melbourne,Fremantle,17,2020,11844
+3,Port Adelaide,Essendon,17,2020,11591
+2,Port Adelaide,Essendon,17,2020,12155
+1,Port Adelaide,Essendon,17,2020,11644
+3,Greater Western Sydney,Melbourne,17,2020,12411
+2,Greater Western Sydney,Melbourne,17,2020,12663
+1,Greater Western Sydney,Melbourne,17,2020,12152
+3,Carlton,Adelaide,17,2020,12818
+2,Carlton,Adelaide,17,2020,12575
+1,Carlton,Adelaide,17,2020,12171
+3,Hawthorn,Western Bulldogs,17,2020,12277
+2,Hawthorn,Western Bulldogs,17,2020,12382
+1,Hawthorn,Western Bulldogs,17,2020,12698
+3,North Melbourne,West Coast,18,2020,12260
+2,North Melbourne,West Coast,18,2020,12662
+1,North Melbourne,West Coast,18,2020,12599
+3,St Kilda,Greater Western Sydney,18,2020,12572
+2,St Kilda,Greater Western Sydney,18,2020,12377
+1,St Kilda,Greater Western Sydney,18,2020,12138
+3,Essendon,Melbourne,18,2020,12437
+2,Essendon,Melbourne,18,2020,11991
+1,Essendon,Melbourne,18,2020,11945
+3,Adelaide,Richmond,18,2020,11801
+2,Adelaide,Richmond,18,2020,12483
+1,Adelaide,Richmond,18,2020,11561
+3,Brisbane Lions,Carlton,18,2020,12061
+2,Brisbane Lions,Carlton,18,2020,11725
+1,Brisbane Lions,Carlton,18,2020,12685
+3,Hawthorn,Gold Coast,18,2020,12201
+2,Hawthorn,Gold Coast,18,2020,11854
+1,Hawthorn,Gold Coast,18,2020,12710
+3,Fremantle,Western Bulldogs,18,2020,12210
+2,Fremantle,Western Bulldogs,18,2020,11844
+1,Fremantle,Western Bulldogs,18,2020,12277
+3,Collingwood,Port Adelaide,18,2020,11792
+2,Collingwood,Port Adelaide,18,2020,11585
+1,Collingwood,Port Adelaide,18,2020,12070
+3,Sydney,Brisbane Lions,17,2020,12073
+2,Sydney,Brisbane Lions,17,2020,11958
+1,Sydney,Brisbane Lions,17,2020,11677
+3,Collingwood,Gold Coast,17,2020,11506
+2,Collingwood,Gold Coast,17,2020,12333
+1,Collingwood,Gold Coast,17,2020,12743
+3,Sydney,Geelong,18,2020,11706
+2,Sydney,Geelong,18,2020,11677
+1,Sydney,Geelong,18,2020,12474
+3,Adelaide,Sydney,1,2020,12331
+2,Adelaide,Sydney,1,2020,11958
+1,Adelaide,Sydney,1,2020,11677
+3,Greater Western Sydney,Geelong,1,2020,12026
+2,Greater Western Sydney,Geelong,1,2020,12541
+1,Greater Western Sydney,Geelong,1,2020,11753
+3,Geelong,Collingwood,7,2020,12333
+2,Geelong,Collingwood,7,2020,12223
+1,Geelong,Collingwood,7,2020,12058
+3,Fremantle,West Coast,7,2020,11492
+2,Fremantle,West Coast,7,2020,12093
+1,Fremantle,West Coast,7,2020,11909
+3,West Coast,Collingwood,8,2020,11492
+2,West Coast,Collingwood,8,2020,12605
+1,West Coast,Collingwood,8,2020,12662
+3,Fremantle,St Kilda,6,2020,11770
+2,Fremantle,St Kilda,6,2020,12596
+1,Fremantle,St Kilda,6,2020,12422
