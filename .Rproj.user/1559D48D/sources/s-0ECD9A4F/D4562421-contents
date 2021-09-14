@@ -142,25 +142,44 @@ clean_data <- function(data, afl_com_au_votes, coaches_votes, fantasy_scores,
 }
 
 ### Other functions ------------------------------------------------------------------------------------------
-var_importance <- function() {
+var_importance <- function(model = c('random_forest', 'xgboost')) {
   
-  best <- ranger_tune %>%
-    select_best("roc_auc")
-  
-  data_vip <- ranger_recipe %>% prep() %>% juice()
-  
-  graph <- finalize_model(ranger_spec, best) %>%
-    set_engine("ranger", importance = "permutation") %>%
-    fit(brownlow_votes ~ .,
-        data = data_vip) %>%
-    vip(geom = "point")
+  if (model == 'random_forest') {
+    
+    best <- ranger_tune %>%
+      select_best("roc_auc")
+    
+    data_vip <- ranger_recipe %>% prep() %>% juice()
+    
+    graph <- finalize_model(ranger_spec, best) %>%
+      set_engine("ranger", importance = "permutation") %>%
+      fit(brownlow_votes ~ .,
+          data = data_vip) %>%
+      vip(geom = "point")
+    
+  } else {
+    
+    best <- xgboost_tune %>%
+      select_best("roc_auc")
+    
+    data_vip <- xgboost_recipe %>% prep() %>% juice()
+    
+    graph <- finalize_model(xgboost_spec, best) %>%
+      set_engine("xgboost", importance = "permutation") %>%
+      fit(brownlow_votes ~ .,
+          data = data_vip) %>%
+      vip(geom = "point")
+    
+  }
   
   return(graph)
   
 }
 
 # Get accuracy on test set
-out_of_sample_accuracy <- function() {
+out_of_sample_accuracy <- function(model = c('random_forest', 'xgboost')) {
+  
+  if (model == 'random_forest') {
   
   best <- ranger_tune %>%
     select_best("roc_auc")
@@ -181,6 +200,31 @@ out_of_sample_accuracy <- function() {
     roc_curve_fun()
   
   metrics <- list(metrics, roc_curve)
+  
+  } else {
+    
+    best <- xgboost_tune %>%
+      select_best("roc_auc")
+    
+    # Fit on entire training data
+    xgboost_test_check <- 
+      workflow() %>% 
+      add_recipe(xgboost_recipe) %>% 
+      add_model(finalize_model(xgboost_spec, best)) %>%
+      last_fit(split, metrics = metric_set(roc_auc, accuracy, sensitivity, specificity))
+    
+    # Check out of sample accuracy
+    metrics <- xgboost_test_check %>%
+      collect_metrics()
+    
+    # Check roc graphs
+    roc_curve <- xgboost_test_check %>%
+      roc_curve_fun()
+    
+    metrics <- list(metrics, roc_curve)
+    
+    
+  }
   
   return(metrics)
   
@@ -229,31 +273,60 @@ roc_curve_fun <- function(data) {
 # Define function to get the predictions
 predict_function <- function() {
   
+  ### Random forest model
+  
   # Select the best tuning parameters, optimizing the roc_auc
-  best <- ranger_tune %>%
+  ranger_best <- ranger_tune %>%
     select_best("roc_auc")
   
   # Fit the final model
   ranger_final_model <- workflow() %>%
     add_recipe(ranger_recipe) %>%
-    add_model(finalize_model(ranger_spec, best)) %>%
+    add_model(finalize_model(ranger_spec, ranger_best)) %>%
     fit(model_data)
+  
+  # Generate the predictions
+  ranger_results <-
+    predict(ranger_final_model, new_data = new_data, type = "prob") %>%
+    rename_with( ~ paste0("ranger_", .x))
+  
+  ### XGBoost model
+  
+  # Select the best tuning parameters, optimizing the roc_auc
+  best_xgboost <- xgboost_tune %>%
+    select_best("roc_auc")
+  
+  # Fit the final model
+  xgboost_final_model <- workflow() %>%
+    add_recipe(xgboost_recipe) %>%
+    add_model(finalize_model(xgboost_spec, best_xgboost)) %>%
+    fit(model_data)
+
+  # Generate the predictions
+  xgboost_results <-
+    predict(xgboost_final_model, new_data = new_data, type = "prob") %>%
+    rename_with( ~ paste0("xgboost_", .x))
   
   # Number of rows
   n_rows <- 198
   
-  # Generate the predictions
-  results <-
-    predict(ranger_final_model, new_data = new_data, type = "prob") %>%
+  ### Combine predictions
+  results <- ranger_results %>%
+    bind_cols(xgboost_results) %>%
+    mutate(pred_0 = (ranger_.pred_0 + xgboost_.pred_0) / 2,
+           pred_1 = (ranger_.pred_1 + xgboost_.pred_1) / 2,
+           pred_2 = (ranger_.pred_2 + xgboost_.pred_2) / 2,
+           pred_3 = (ranger_.pred_3 + xgboost_.pred_3) / 2) %>%
+    select(pred_0:pred_3) %>%
     bind_cols(new_data) %>%
-    select(match_id, player_id, player_name, player_team, .pred_0:.pred_3) %>%
-    mutate(expected_votes = (.pred_0 * 0) + (.pred_1 * 1) + (.pred_2 * 2) + (.pred_3 * 3)) %>%
+    select(match_id, player_id, player_name, player_team, pred_0:pred_3) %>%
+    mutate(expected_votes = (pred_0 * 0) + (pred_1 * 1) + (pred_2 * 2) + (pred_3 * 3)) %>%
     group_by(match_id) %>%
     slice_max(order_by = expected_votes, n = 3, with_ties = FALSE) %>%
     ungroup() %>%
     arrange(match_id, desc(expected_votes)) %>%
     mutate(predicted_votes = rep(c(3, 2, 1), n_rows))
-  
+
   return(results)
   
 }
