@@ -54,40 +54,27 @@ bootstrap_folds <-
 ### Train and fit model ---------------------------------------------------------------------------------
 
 setwd(paste0(here::here(), "/01 Scripts"))
-source('01_models.R', echo=TRUE)
-
-# See which hyper parameters performed the best
-hyper_parameter_grid <- tuning_parameters_fun()
-
-# See which variables are of most importance
-var_salience <- var_importance(model = 'xgboost')
+source('01_models.R', echo = TRUE)
 
 # See how the model performs on the test set using optimal hyper parameters
-metrics <- out_of_sample_accuracy(model = 'xgboost')
+ranger_metrics
+xgboost_metrics
+nn_metrics
 
 ### Get predictions for 2021 ----------------------------------------------------------------------------
 
 # Fit the final model to all historic data and predict on the new data
+# Use a straight average of all the model predictions
 predicted_votes <- predict_function()
 
 totals_table()
 
+
+### Export results  --------------------------------------------------------------------------------------
 setwd(paste0(here::here(), "/02 Outputs"))
+
 predicted_votes %>%
-  inner_join(clean_all_data) %>%
-  select(match_round, match_home_team, match_away_team, player_team, player_name, pred_0:pred_3, expected_votes, predicted_votes) %>%
   write_csv('2021_predicted_votes.csv')
-
-
-
-
-
-
-
-
-
-
-
 
 
 

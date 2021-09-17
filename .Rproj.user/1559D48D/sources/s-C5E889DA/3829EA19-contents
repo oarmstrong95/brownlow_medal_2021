@@ -176,60 +176,6 @@ var_importance <- function(model = c('random_forest', 'xgboost')) {
   
 }
 
-# Get accuracy on test set
-out_of_sample_accuracy <- function(model = c('random_forest', 'xgboost')) {
-  
-  if (model == 'random_forest') {
-  
-  best <- ranger_tune %>%
-    select_best("roc_auc")
-  
-  # Fit on entire training data
-  ranger_test_check <- 
-    workflow() %>% 
-    add_recipe(ranger_recipe) %>% 
-    add_model(finalize_model(ranger_spec, best)) %>%
-    last_fit(split, metrics = metric_set(roc_auc, accuracy, sensitivity, specificity))
-  
-  # Check out of sample accuracy
-  metrics <- ranger_test_check %>%
-    collect_metrics()
-  
-  # Check roc graphs
-  roc_curve <- ranger_test_check %>%
-    roc_curve_fun()
-  
-  metrics <- list(metrics, roc_curve)
-  
-  } else {
-    
-    best <- xgboost_tune %>%
-      select_best("roc_auc")
-    
-    # Fit on entire training data
-    xgboost_test_check <- 
-      workflow() %>% 
-      add_recipe(xgboost_recipe) %>% 
-      add_model(finalize_model(xgboost_spec, best)) %>%
-      last_fit(split, metrics = metric_set(roc_auc, accuracy, sensitivity, specificity))
-    
-    # Check out of sample accuracy
-    metrics <- xgboost_test_check %>%
-      collect_metrics()
-    
-    # Check roc graphs
-    roc_curve <- xgboost_test_check %>%
-      roc_curve_fun()
-    
-    metrics <- list(metrics, roc_curve)
-    
-    
-  }
-  
-  return(metrics)
-  
-}
-
 # Define function to check tuning parameters to optimize the grid search
 # on the second tuning iteration
 tuning_parameters_fun <- function(){
@@ -273,39 +219,16 @@ roc_curve_fun <- function(data) {
 # Define function to get the predictions
 predict_function <- function() {
   
-  ### Random forest model
   
-  # Select the best tuning parameters, optimizing the roc_auc
-  ranger_best <- ranger_tune %>%
-    select_best("roc_auc")
   
-  # Fit the final model
-  ranger_final_model <- workflow() %>%
-    add_recipe(ranger_recipe) %>%
-    add_model(finalize_model(ranger_spec, ranger_best)) %>%
-    fit(model_data)
+  value_1 <- ranger_metrics[[3]][[4]]
+  value_2 <- xgboost_metrics[[3]][[4]]
+  value_3 <- nn_metrics[[3]][[4]]
+  total <- value_1 + value_2 + value_3
   
-  # Generate the predictions
-  ranger_results <-
-    predict(ranger_final_model, new_data = new_data, type = "prob") %>%
-    rename_with( ~ paste0("ranger_", .x))
-  
-  ### XGBoost model
-  
-  # Select the best tuning parameters, optimizing the roc_auc
-  best_xgboost <- xgboost_tune %>%
-    select_best("roc_auc")
-  
-  # Fit the final model
-  xgboost_final_model <- workflow() %>%
-    add_recipe(xgboost_recipe) %>%
-    add_model(finalize_model(xgboost_spec, best_xgboost)) %>%
-    fit(model_data)
-
-  # Generate the predictions
-  xgboost_results <-
-    predict(xgboost_final_model, new_data = new_data, type = "prob") %>%
-    rename_with( ~ paste0("xgboost_", .x))
+  weight_1 <- value_1/total
+  weight_2 <- value_2/total
+  weight_3 <- value_3/total
   
   # Number of rows
   n_rows <- 198
@@ -313,10 +236,12 @@ predict_function <- function() {
   ### Combine predictions
   results <- ranger_results %>%
     bind_cols(xgboost_results) %>%
-    mutate(pred_0 = (ranger_.pred_0 + xgboost_.pred_0) / 2,
-           pred_1 = (ranger_.pred_1 + xgboost_.pred_1) / 2,
-           pred_2 = (ranger_.pred_2 + xgboost_.pred_2) / 2,
-           pred_3 = (ranger_.pred_3 + xgboost_.pred_3) / 2) %>%
+    bind_cols(nn_results) %>%
+    mutate(pred_0 = (ranger.pred_0*weight_1) + (xgboost.pred_0*weight_2) + (nn.pred_0*weight_3),
+           pred_1 = (ranger.pred_1*weight_1) + (xgboost.pred_1*weight_2) + (nn.pred_1*weight_3),
+           pred_2 = (ranger.pred_2*weight_1) + (xgboost.pred_2*weight_2) + (nn.pred_2*weight_3),
+           pred_3 = (ranger.pred_3*weight_1) + (xgboost.pred_3*weight_2) + (nn.pred_3*weight_3)
+           ) %>%
     select(pred_0:pred_3) %>%
     bind_cols(new_data) %>%
     select(match_id, player_id, player_name, player_team, pred_0:pred_3) %>%
@@ -326,8 +251,19 @@ predict_function <- function() {
     ungroup() %>%
     arrange(match_id, desc(expected_votes)) %>%
     mutate(predicted_votes = rep(c(3, 2, 1), n_rows))
+  
+  # Import edited votes
+  edited_votes <- read_excel("~/brownlow_medal_2021/02 Outputs/2021_predicted_votes.xlsx")
+  
+  # Final predictions
+  final_predicted_votes <- edited_votes %>%
+    select(match_round = round, match_home_team:match_away_team, player_name, pred_0:predicted_votes) %>%
+    left_join(clean_all_data %>% filter(season == 2021) %>% distinct(player_name, player_id, player_team, match_home_team, match_away_team)) %>%
+    mutate(player_id = if_else(is.na(player_id), 12414, player_id),
+           player_team = if_else(is.na(player_team), 'Essendon', player_team)) %>%
+    select(match_round:match_away_team, player_team, player_id, everything())
 
-  return(results)
+  return(final_predicted_votes)
   
 }
 
