@@ -3,7 +3,8 @@
 
 # Load and install packages locally
 pacman::p_load(tidyverse, here, fitzRoy, janitor, lubridate, naniar, tidymodels, 
-               readr, themis, ranger, parallel, doParallel, tictoc, rvest, vip, gt)
+               readr, themis, ranger, parallel, doParallel, tictoc, rvest, vip, gt,
+               readxl)
 
 setwd(paste0(here::here(), "/01 Scripts"))
 source('00_functions.R', echo=FALSE)
